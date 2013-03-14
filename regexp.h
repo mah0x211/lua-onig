@@ -56,8 +56,8 @@ void regexp_global_dispose( void );
 })
 
 typedef struct {
-	OnigRegex obj;
-	OnigErrorInfo err;
+    OnigRegex obj;
+    OnigErrorInfo err;
 } Regexp_t;
 
 // retval: REGEXP_OK or other

@@ -100,7 +100,7 @@ int regexp_exec( Regexp_t *re, const char *str, size_t len, size_t lastIdx,
     unsigned char *src = (unsigned char*)str;
     unsigned char *start = src + lastIdx;
     unsigned char *end = src + len;
-	unsigned char *range = end;
+    unsigned char *range = end;
     
     onig_region_init( &region );
     idx->head = idx->len = idx->num = 0;
@@ -130,9 +130,9 @@ int regexp_exec( Regexp_t *re, const char *str, size_t len, size_t lastIdx,
         rc = REGEXP_OK;
     }
     
-	onig_region_free( &region, 0 );
+    onig_region_free( &region, 0 );
    
-	return rc;
+    return rc;
 }
 
 int regexp_exec_cb( Regexp_t *re, const char *str, size_t len, REGEXP_CB cb, 
@@ -143,7 +143,7 @@ int regexp_exec_cb( Regexp_t *re, const char *str, size_t len, REGEXP_CB cb,
     unsigned char *src = (unsigned char*)str;
     unsigned char *start = src;
     unsigned char *end = src + len;
-	unsigned char *range = end;
+    unsigned char *range = end;
     
     onig_region_init( &region );
     while( ( rc = onig_search( re->obj, src, end, start, range, &region, 
@@ -156,8 +156,8 @@ int regexp_exec_cb( Regexp_t *re, const char *str, size_t len, REGEXP_CB cb,
     }
     
     onig_region_free( &region, 0 );
-	
-	return ( rc == ONIG_MISMATCH ) ? REGEXP_OK : rc;
+    
+    return ( rc == ONIG_MISMATCH ) ? REGEXP_OK : rc;
 }
 
 
